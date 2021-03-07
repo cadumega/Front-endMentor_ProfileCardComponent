@@ -67,7 +67,7 @@ obs: Poderia fazer de outra forma, utilizando o before no css, e no content colo
           </span>
           <h2 class="name-profile">
           Victor Crest
-          <span class="age=profile" 26></span>
+          <span class="age-profile">26</span>
           </h2>
           <p class="city-profile">London</p>
         </div>
@@ -88,18 +88,21 @@ obs: Poderia fazer de outra forma, utilizando o before no css, e no content colo
 cada um desses li são os bloquinhos "followers, likes,photos"
 ```
 <div class="card-footer">
-        <ul class="social-numbers">
-          <li class="item-social-numbers"></li>
-            <span class="number">80k</span>
-            <span class="social-description">Followers</span>
-          <li class="item-social-numbers"></li>
-            <span class="number">803k</span>
-            <span class="social-description">Likes</span>
-          <li class="item-social-numbers"></li>
-            <span class="number">50</span>
-            <span class="social-description">Photos</span>
-        </ul>
-      </div>
+            <ul class="social-numbers">
+              <li class="item-social-numbers">
+                <span class="number">80k</span>
+                <span class="social-description">Followers</span>
+              </li>
+              <li class="item-social-numbers">
+                <span class="number">803k</span>
+                <span class="social-description">Likes</span>
+              </li>
+              <li class="item-social-numbers">
+                <span class="number">50</span>
+                <span class="social-description">Photos</span>
+              </li>
+            </ul>
+        </div>
 ```
 ___
 Começar a estilizar o projeto, colorir o projeto. style.css , guia o style-guide.md que foi disponibilizado.
@@ -107,6 +110,7 @@ Posso importar para o style.css a fonte ou copiar e colar o link gerado da fonte
 
 Iremos criar algumas variáveis de css das cores que serão utilizadas várias vezes.
 A variável irá guardar a coloração, e iremos usar em cada elemento.
+1 rem = 18 px o que coloquei no body,html
 Utilizado o sass-lang.com que é um pré processamento de escolha da cor. Mas iremos ver a base de escolha sem ser por esse modo.
 
 1-  elemento root  irá usar para toda documentação
@@ -161,6 +165,150 @@ body ,html{
 ```
 
 4- Trabalhar com os 2 baloons sobrepondo o background. Uma a esquerda e outra a direita.
-position relative , se posiciona conforme os objetos renderizados na tela. Acaba arrastando para baixo o card.
-position absolute,  ocupada 0 left e top ,subindo o elemento card.
-Maior z index, mais a frente, sobrescrever para a maioria dos elementos, bootstrap costuma colocar 99999.
+position relative , se posiciona conforme os objetos renderizados na tela. Acaba arrastando para baixo o card. Um elemento depois o outro.
+position absolute,  ocupada 0 left e top ,subindo o elemento card. Joga um elemento em cima do outro independentemente.
+Maior z index, mais a frente, sobrescrever para a maioria dos elementos, bootstrap costuma colocar 99999. Só funciona com o position.
+
+5- CARD
+Colocar uma borda para conseguir verificar como esta ficando em relação a div. Bom para rever os posicionamentos das divs com o html. 
+Trabalhar a parte central do card.
+```
+.card {
+  border: 1px solid black;
+  position: relative;
+  z-index: 10;
+}
+```
+
+Verifiquei que tem um excedente na imagem para fora, não irei utilizar, preciso usar o elemento overflow:hidden, mas preciso posicionar também.
+```
+.container {
+  background-color: var(--dark-cyan);
+  height: 100%;
+  position: relative; 
+  overflow: hidden;
+}
+```
+
+
+Deixar bordar arredondada .  border-radius , tamanho foi no olho, já que não tinha no guide-style.
+background o padrão é repetir a imagem,
+```
+.card {
+  position: relative;
+  z-index: 10;
+  width: 325px;
+  height: 375px;
+  background-color: #fff;
+  border-radius: 15px;
+  background-image: url('images/bg-pattern-card.svg');
+  background-repeat: no-repeat;
+}
+```
+
+// para escrever menos background. posso colocar a propriedade :
+// aplicando display flex, alinho um ao lado do outro , com as outras propriedades.
+```
+.card {
+  position: relative;
+  z-index: 10;
+  width: 325px;
+  height: 375px;
+  border-radius: 15px;
+  background: #fff url('images/bg-pattern-card.svg') no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+```
+Centralizar ao centro
+```
+.content{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
+
+Usar a propriedade display, para centralizar todo o conteúdo do card-profile, text align seria só o texto.
+```
+.card-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+```
+
+Arredondar imagem
+```
+.img-profile img {
+  max-width: 100%;
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+```
+
+Textos name abaixo da imagem circular , capitalize para primeira letras maisculas
+```
+.name-profile {
+  text-transform: capitalize;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--dark-blue);
+  padding-top: 1rem;
+}
+```
+
+Estilizações
+```
+.age-profile {
+  color: var(--dark-grayish);
+  font-weight: 400;
+}
+.city-profile {
+  text-transform: capitalize;
+  color: var(--dark-gray);
+  font-size: 14px;
+  padding-top: .5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+```
+
+// bottom: 0; é onde segura mais abaixo, com position absolute, se for relative iria mais abaixo
+div renderiza em bloco, um embaixo do outro, span não.
+
+```
+.card-footer {
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #e9e9e9;
+  width: 100%;
+}
+.social-numbers {
+  display: flex;
+  justify-content: space-around;
+  font-size: 14px;
+}
+.item-social-numbers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.number {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: .2rem ;
+}
+.social-description {
+  text-transform: capitalize;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+```
