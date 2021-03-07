@@ -34,15 +34,15 @@ body ,html{
 
 .bg-ballon-top {
   position: absolute;
-  top: -80%; 
-  right: 50%;
+  top: -90%; 
+  right: 60%;
   z-index: 9;
 }
 
 .bg-ballon-bottom {
   position: absolute;
-  bottom: -80%; 
-  left: 20%;
+  bottom: -90%; 
+  left: 60%;
   z-index: 9;
 }
 
@@ -99,7 +99,7 @@ body ,html{
   color: var(--dark-gray);
   font-size: 14px;
   padding-top: .5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
