@@ -34,15 +34,15 @@ body ,html{
 
 .bg-ballon-top {
   position: absolute;
-  top: -90%; 
-  right: 60%;
+  top: -100%; 
+  right: 45%;
   z-index: 9;
 }
 
 .bg-ballon-bottom {
   position: absolute;
-  bottom: -90%; 
-  left: 60%;
+  bottom: -100%; 
+  left: 55%;
   z-index: 9;
 }
 
