@@ -1,32 +1,31 @@
-.relative-parent {
+.absolute {
   background: #156236;
   position: absolute;
-  height: 400px;
-  width: 400px;
+  height: 500px;
+  width: 500px;
 }
 
 .relative {
   background: #af8542;
-  height: 100px;
-  width: 200px;
-  position: absolute;
-  top: 20px;
-  left: 45px;
+  height: 400px;
+  width: 500px;
+  top: 20%;
+  position: relative;
+  left: 20%;
 }
 
-.absolute {
+/* .absolute {
   background: #c590f5;
-  height: 100px;
-  width: 200px;
-  position: absolute;
+  height: 400px;
+  width: 400px;
   top: 50px;
-  right: 500px;
+  position: absolute;
  }
 
- .absolutedad {
+ .relativeson {
   background: greenyellow;
-  height: 500px;
-  width: 500px;
-  position: absolute;
-  left: 500px;
- }
+  height: 300px;
+  width: 300px;
+  left: 10%;
+  position: relative;
+ } */
