@@ -1,4 +1,4 @@
-#Passos resumidos e Modelo do challenge:
+# **Passos resumidos e Modelo do challenge:**
 ![image](https://user-images.githubusercontent.com/72901445/113341513-9e99da00-9303-11eb-89a2-d96f6867e328.png)
 
 1. Baixei os arquivos com as especificações de estilo e do projeto. Contendo arquivos de imagens, read.me , stylereadme.
