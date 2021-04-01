@@ -1,15 +1,15 @@
-Passos resumidos e Modelo do challenge:
+#Passos resumidos e Modelo do challenge:
 ![image](https://user-images.githubusercontent.com/72901445/113341513-9e99da00-9303-11eb-89a2-d96f6867e328.png)
 
-1- Baixei os arquivos com as especificações de estilo e do projeto. Contendo arquivos de imagens, read.me , stylereadme.
+1. Baixei os arquivos com as especificações de estilo e do projeto. Contendo arquivos de imagens, read.me , stylereadme.
 	Juntar as pastas com as imagens, com os arquivos que irei criar do projeto.
 
-2-  Criando os arquivos de index.html e style.css . Além de referenciar em head a estrutura do html a folha de css.
+2.  Criando os arquivos de index.html e style.css . Além de referenciar em head a estrutura do html a folha de css.
 ```
   <link rel="stylesheet" href="style.css">
 ```
 
-3- Preciso delimitar o container (que é o retangulo da imagem azulado com verde) , cima e baixo tem uma espécie de balão, nos arquivos tem balão top and bottom.
+3. Preciso delimitar o container (que é o retangulo da imagem azulado com verde) , cima e baixo tem uma espécie de balão, nos arquivos tem balão top and bottom.
 	Crio uma  div para isso na qual irei colocar outras 2 div :
 ```
   <div class="container">
@@ -30,7 +30,7 @@ Passos resumidos e Modelo do challenge:
 
 // posso deixar comentado essa parte das imagens, para estar vendo a estruturação do html.
 
-4- Card esta centralizado, fica mais fácil para usar o flexbox do css, prefiro envolver todo o card principal como conteúdo, depois centralizo ele como um todo. Vamos para criação do card principal
+4. Card esta centralizado, fica mais fácil para usar o flexbox do css, prefiro envolver todo o card principal como conteúdo, depois centralizo ele como um todo. Vamos para criação do card principal
 ```
 <div class="content">
       <div class="card">
@@ -44,7 +44,7 @@ obs: Em alguns momentos, é normal esquecer alguma div , e por conseguinte criar
 
 Dentro do card principal, tenho outros cards.
 
-5- Abracei a imagem com span e não com div, para não deixar solto.
+5. Abracei a imagem com span e não com div, para não deixar solto.
 ```
 <div class="content">
       <div class="card">
@@ -60,7 +60,7 @@ Dentro do card principal, tenho outros cards.
 
 obs: Poderia fazer de outra forma, utilizando o before no css, e no content colocaria a idade 26, mas imaginando que esse dado venha de servidor ou de outra forma, é melhor tratar direto no html do que no content do css, fica mais difícil de jogar a informação no css.
 
-6- Fechar o meu card profile, adicionei h2 e p
+6. Fechar o meu card profile, adicionei h2 e p
 ```
     <div class="content">
       <div class="card">
@@ -78,7 +78,7 @@ obs: Poderia fazer de outra forma, utilizando o before no css, e no content colo
     </div>
 ```
 
-6- Sequencia de informações na vertical ou horizontal, imagino como uma lista não ordenada, é igual menu... home inicio sobre serviços contatos... , informações elencadas costumo trabalhar com listas não ordenadas ul
+6. Sequencia de informações na vertical ou horizontal, imagino como uma lista não ordenada, é igual menu... home inicio sobre serviços contatos... , informações elencadas costumo trabalhar com listas não ordenadas ul
 
 ```
 <div class="card-footer"></div>
@@ -108,6 +108,7 @@ cada um desses li são os bloquinhos "followers, likes,photos"
         </div>
 ```
 ___
+## CSS
 Começar a estilizar o projeto, colorir o projeto. style.css , guia o style-guide.md que foi disponibilizado.
 Posso importar para o style.css a fonte ou copiar e colar o link gerado da fonte. Cola na head a família da fonte, iremos setar no body também.
 
@@ -116,7 +117,7 @@ A variável irá guardar a coloração, e iremos usar em cada elemento.
 1 rem = 18 px o que coloquei no body,html
 Utilizado o sass-lang.com que é um pré processamento de escolha da cor. Mas iremos ver a base de escolha sem ser por esse modo.
 
-1-  elemento root  irá usar para toda documentação
+1.  elemento root  irá usar para toda documentação
 montamos as variáveis com 2 tracinhos e o nome, como é nome composto botei um traço a mais.
 ```
 :root {
@@ -126,7 +127,7 @@ montamos as variáveis com 2 tracinhos e o nome, como é nome composto botei um 
   --dark-gray: hsl(0, 0%, 59%); 
 }
 ```
-2- elemento reset * , limpar tudo que esta pré definido 
+2. elemento reset * , limpar tudo que esta pré definido 
 reset também no ul, para aplicar o meu comportamento de posicionamento quando estilizar a lista não ordenada
 
 ```
@@ -167,7 +168,7 @@ body ,html{
 }
 ```
 
-4- Trabalhar com os 2 baloons sobrepondo o background. Uma a esquerda e outra a direita.
+4. Trabalhar com os 2 baloons sobrepondo o background. Uma a esquerda e outra a direita.
 position relative , se posiciona conforme os objetos renderizados na tela. Acaba arrastando para baixo o card. Um elemento depois o outro.
 position absolute,  ocupada 0 left e top ,subindo o elemento card. Joga um elemento em cima do outro independentemente.
 Maior z index, mais a frente, sobrescrever para a maioria dos elementos, bootstrap costuma colocar 99999. Só funciona com o position.
